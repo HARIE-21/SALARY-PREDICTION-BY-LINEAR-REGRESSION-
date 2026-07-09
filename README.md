@@ -10,7 +10,6 @@ A production-grade Linear Regression solution for transparent salary benchmarkin
   <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Scikit--Learn-1.0%2B-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" />
   <img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
   <img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square" />
 </p>
 
