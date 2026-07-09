@@ -1,51 +1,69 @@
 # SALARY-PREDICTION-BY-LINEAR-REGRESSION-
 A production-grade Linear Regression solution for transparent salary benchmarking. Implements Ordinal Encoding to preserve the hierarchical nature of Education, with deep diagnostic checks (Residuals vs. Fitted) to validate OLS assumptions. Delivers business metrics, empowering HR teams with data-driven compensation strategies.
-# 👨‍💼 Employee Attrition Prediction
+# Employee Salary Prediction
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.0+-orange.svg)](https://scikit-learn.org/)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
-
-> **Predicting employee churn using Logistic Regression to help HR teams proactively retain top talent.**
+A machine learning project that predicts an employee's annual salary based on **Years of Experience** and **Education Level** using Linear Regression.
 
 ---
 
-## 📌 Overview
+## Objective
 
-Employee turnover is costly. This project builds a **machine learning pipeline** that predicts whether an employee is likely to leave the company based on HR data (e.g., salary, overtime, job satisfaction, and work-life balance).
-
-The solution focuses on:
-- **Interpretability**: Logistic Regression provides clear, business-friendly coefficients.
-- **Production-readiness**: A `Pipeline` with `ColumnTransformer` ensures zero data leakage.
-- **Actionable insights**: Identifies the top drivers of attrition (e.g., Overtime, Monthly Income, Job Satisfaction).
+To build an interpretable regression model that helps HR teams and businesses determine fair salary benchmarks. The model quantifies exactly how much an extra year of experience or an advanced degree contributes to compensation.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
-The dataset (`test.csv`) contains **~10,000 employee records** with the following features:
+The dataset contains employee records with the following key columns:
 
-| Type | Features |
+- `Years of Experience` – Total professional experience (in years)
+- `Education Level` – Bachelor's, Master's, or PhD
+- `Salary` – Annual salary in USD (Target Variable)
+
+> The dataset includes other fields like `Age`, `Gender`, and `Job Title`, but this project focuses on Experience and Education for simplicity and interpretability.
+
+---
+
+## Tech Stack
+
+- Python 3.8+
+- Pandas & NumPy – Data processing
+- Matplotlib & Seaborn – Visualization
+- Scikit-Learn – Preprocessing, Modeling, Evaluation
+- Jupyter Notebook – Interactive development
+
+---
+
+## Methodology
+
+1. **Data Cleaning** – Removed empty rows and fixed malformed salary entries.
+2. **EDA** – Visualized relationships to confirm linear trends and education hierarchy.
+3. **Feature Engineering** – Applied **Ordinal Encoding** to Education Level:
+   - Bachelor's → 0
+   - Master's → 1
+   - PhD → 2
+4. **Model Training** – Used Ordinary Least Squares Linear Regression (80/20 train-test split).
+5. **Evaluation** – Measured performance using R², MAE, RMSE, and MAPE.
+
+---
+
+## Results
+
+| Metric | Value |
 | :--- | :--- |
-| **Numerical** | Age, Monthly Income, Years at Company, Number of Promotions, Distance from Home, Company Tenure, Number of Dependents |
-| **Categorical** | Gender, Job Role, Job Satisfaction, Work-Life Balance, Overtime, Education Level, Marital Status, Remote Work, etc. |
-| **Target** | `Attrition` (Left / Stayed) |
+| R-squared (R²) | ~0.74 |
+| Mean Absolute Error (MAE) | ~$11,200 |
+| Average Prediction Accuracy | ~86.5% |
+
+**Interpretation**:  
+- Every additional year of experience → ~$5,200 increase in salary.  
+- Moving from Bachelor's to Master's → ~$12,000 increase.
 
 ---
 
-## 📁 Project Structure
+## How to Run
 
-```text
-employee-attrition-prediction/
-│
-├── data/
-│   └── test.csv                 # Raw dataset
-│
-├── notebooks/
-│   └── employee_attrition.ipynb # Full Jupyter Notebook (code + explanations)
-│
-├── src/                         # (Optional) Python scripts
-│   └── predict.py               
-│
-├── requirements.txt             # Python dependencies
-└── README.md                    # You are here!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/employee-salary-prediction.git
+   cd employee-salary-prediction
